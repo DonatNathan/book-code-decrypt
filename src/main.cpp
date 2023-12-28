@@ -13,9 +13,14 @@
 void decryptCode(std::vector<int> inputArray, std::vector<char> keyArray)
 {
     std::string output;
+    std::ofstream outputFile;
+
+    outputFile.open("output.txt");
+
     for (int i = 0; i < inputArray.size(); i++)
         output.push_back(keyArray.at(inputArray.at(i) - 1));
-    std::cout << "Output : " << output << std::endl;
+    // std::cout << "Output : " << output << std::endl;
+    outputFile << output;
 }
 
 int main(int argc, char **argv)
