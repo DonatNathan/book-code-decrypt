@@ -36,3 +36,8 @@ unit_tests
 # Coverage
 *.gcda
 *.gcno
+
+# Other
+output.txt
+key.txt
+.vscode
