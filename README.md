@@ -7,6 +7,14 @@ git clone git@github.com:DonatNathan/book-code-decrypt.git
 cd book-code-decrypt
 ```
 
+## How to setup
+
+```
+sudo pacman -Syu
+sudo pacman -Sy gcovr yay base-devel
+yay -S criterion
+```
+
 ## How to compile
 
 ```

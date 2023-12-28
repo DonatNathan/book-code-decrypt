@@ -1,12 +1,11 @@
 #include  <criterion/criterion.h>
 #include <sstream>
-#include <iostream>
-#include <vector>
+
 #include "../../includes/debug.hpp"
 
-// Test(displayInput, display_good_input)
+// Test(displayInputTests, display_good_input)
 // {
-//     std::vector<int> v = {10, 8, 98};
+//     std::vector<int> v = {};
 //     std::streambuf* originalCoutStreamBuf = std::cout.rdbuf();
 //     std::ostringstream capturedOutput;
 
@@ -16,7 +15,7 @@
 
 //     std::cout.rdbuf(originalCoutStreamBuf);
 
-//     cr_assert_eq(capturedOutput.str().c_str(), "Input : \n10\n8\n98\n", "The output was not as expected");
+//     cr_assert_eq(capturedOutput.str().c_str(), "Input : ", "The output was not as expected");
 // }
 
 // Test(displayKey, display_good_key)

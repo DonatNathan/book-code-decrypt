@@ -17,13 +17,14 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) *.gcno *.gcda
 	$(RM) unit_tests
 	@echo 'Executable deleted'
 
 re: fclean all
 
 test:
-	g++ $(src) tests/units/*.cpp -W -Iincludes -o unit_tests --coverage -lcriterion
+	g++ src/errorHandling.cpp src/debug.cpp tests/units/*.cpp -Iincludes -o unit_tests --coverage -lcriterion
 	@./unit_tests
 	gcovr --exclude tests/
 	gcovr --exclude tests/ --branches
