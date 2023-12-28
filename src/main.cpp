@@ -1,6 +1,5 @@
 #include "../includes/main.hpp"
 
-//Todo : Set separators
 //Todo : Make unit tests
 //Todo : Make functionals tests
 //Todo : Find solution to set spaces between words
@@ -19,6 +18,12 @@ void decryptCode(std::vector<int> inputArray, std::vector<char> keyArray)
     outputFile.close();
 }
 
+char asciiToUpper(char c) {
+    if (c <= 'z' && c >= 'a')
+        return c - ('z' - 'Z');
+    return c;
+}
+
 void replaceSeparatorsKey(std::string keyFilePath, std::string separators)
 {
     std::ifstream keyFile;
@@ -31,9 +36,11 @@ void replaceSeparatorsKey(std::string keyFilePath, std::string separators)
         tempKey += " " + word;
     keyFile.close();
 
-    for (int i = 0; i < tempKey.length(); i++)
+    for (int i = 0; i < tempKey.length(); i++) {
+        tempKey[i] = asciiToUpper(tempKey[i]);
         if (separators.find(tempKey[i]) != std::string::npos)
             tempKey[i] = ' ';
+    }
 
     newKeyFile.open("key.txt");
     newKeyFile << tempKey;
