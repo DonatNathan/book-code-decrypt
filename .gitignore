@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+decrypter
+unit_tests
+
+# Coverage
+*.gcda
+*.gcno

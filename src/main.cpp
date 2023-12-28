@@ -4,12 +4,17 @@
 
 #include "../includes/main.hpp"
 
+//Todo : Set separators
+//Todo : Make unit tests
+//Todo : Make functionals tests
+//Todo : Write output in file
+//Todo : Find solution to set spaces between words
+
 void decryptCode(std::vector<int> inputArray, std::vector<char> keyArray)
 {
     std::string output;
-    for (int i = 0; i < inputArray.size(); i++) {
+    for (int i = 0; i < inputArray.size(); i++)
         output.push_back(keyArray.at(inputArray.at(i) - 1));
-    }
     std::cout << "Output : " << output << std::endl;
 }
 
@@ -31,6 +36,9 @@ int main(int argc, char **argv)
         inputArray.push_back(std::atoi(word.c_str()));
     while (keyFile >> word)
         keyArray.push_back(word[0]);
+
+    // displayInput(inputArray);
+    // displayKey(keyArray);
 
     decryptCode(inputArray, keyArray);
 
