@@ -26,7 +26,8 @@ re: fclean all
 test:
 	g++ src/errorHandling.cpp src/debug.cpp tests/units/*.cpp -Iincludes -o unit_tests --coverage -lcriterion
 	@./unit_tests
-	gcovr --exclude tests/
-	gcovr --exclude tests/ --branches
+	@gcovr --exclude tests/
+	@gcovr --exclude tests/ --branches
+	@python functionals_tests.py
 
 .PHONY: re fclean clean all test
